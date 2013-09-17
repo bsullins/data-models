@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='ISO-8859-1' standalone='yes'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN' 'http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' >
+<head>
+<title>Database Documentation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style type='text/css'>
+	 #dbs {font-family:Tahoma,Dialog,Sans-Serif;font-size:12px;background:#fff;width:80%;border-collapse:collapse;text-align:left;margin:8px;}
+	 #dbs thead{background:#c0d4f3;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to( #c0d4f3));}
+	 #dbs th{font-size:12px;font-weight:bold;color:#333;border-bottom:1px solid #333;padding:5px 6px;}
+	 #dbs td{border-bottom:1px solid #ddd;padding:3px 5px;white-space: pre;}
+	 td.subpart{background:#c0d4f3;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to( #c0d4f3));}
+	 #dbs tbody tr:hover td{color:#000;background:#fffcea;}
+</style>
+</head>
+
+<body>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'   width='735' height='455' viewbox='0 0 735 455' >
+<style type='text/css'>
+  text                { fill:#000000; font-family: Tahoma, Dialog, Arial; font-size:11px; stroke:#000000; stroke-width:0.1; }
+  text:hover          { fill:#a00000; font-size:12px;}
+  text.colType        { fill:#a9bdc6; }
+  text.tableTitle     { fill:#000000; }
+  path                { stroke:#797979; stroke-width:1.3; fill:none; }
+  rect.table          { fill:#ffffff; stroke:#4e4c4c; stroke-width:0.3; filter:url(#shadow); }
+  line.table          { stroke:#9ea1a4; stroke-width:0.3; }
+  rect.callout        { fill:url(#calloutGradient); stroke:#aea913; stroke-width:0.5; }
+  rect.grp            { opacity:0.5; stroke:#b1b1b1; stroke-width:1.7; }
+</style>
+<defs>
+  <pattern id='layoutGradient' patternUnits='userSpaceOnUse' x='0' y='0' width='10' height='10' viewBox='0 0 10 10'>
+    <rect x='0' y='0' width='10' height='10' style='fill:#f7f7f0;' />
+    <line x1='5' y1='10' x2='5' y2='0' style='stroke:#949494;stroke-width:0.5;stroke-dasharray:1,9;'  />
+  </pattern>
+  <radialGradient id='layoutGradientOld' cx='20%' cy='20%' r='25%' fx='10%' fy='0%'>
+	   <stop offset='0%' stop-color='#ffffff' />
+    <stop offset='100%' stop-color='#efefef' />
+  </radialGradient>
+  <linearGradient id='tableHeaderGradient0' x1='0%' y1='0%' x2='0%' y2='90%' >
+          <stop offset='0%' stop-color='white'/> 
+          <stop offset='30%' stop-color='white'/> 
+          <stop offset='100%' stop-color='#c6d9f6'/> 
+   </linearGradient>
+  <linearGradient id='groupUnderTitleLine' x1='0%' y1='0%' x2='100%' y2='0%' >
+          <stop offset='0%' stop-color='#999999' stop-opacity='0.7'/> 
+          <stop offset='100%' stop-color='#999999' stop-opacity='0' /> 
+   </linearGradient>
+  <radialGradient id='calloutGradient' cx='20%' cy='20%' r='100%' fx='10%' fy='10%'>
+	   <stop offset='0%' stop-color='#ffffff' />
+    <stop offset='100%' stop-color='#f4f1a4' />
+  </radialGradient>
+  <filter id='shadow' width='150%' height='150%'> 
+    <feGaussianBlur in='SourceAlpha' stdDeviation='2' result='image1' /> 
+    <feOffset in='image1' result='image2' dx='2' dy='2' />
+    <feColorMatrix type='matrix' in='image2' result='image3' 
+       values='1 1 1 0 0 
+               1 1 1 0 0 
+               1 1 1 0 0 
+               0 0 0 .5 0'/>
+    <feComposite in='SourceGraphic' in2='image3' operator='over' /> 
+  </filter>
+  <filter id='legendShadow' filterUnits='userSpaceOnUse' x='0' y='0' width='400' height='120'> 
+     <feGaussianBlur in='SourceAlpha' stdDeviation='3' result='blur'/> 
+     <feOffset in='blur' dx='2' dy='2' result='offsetBlur'/> 
+     <feSpecularLighting in='blur' surfaceScale='5' specularConstant='.75' specularExponent='20' lighting-color='#bbbbbb' result='specOut'>
+        <fePointLight x='-5000' y='-10000' z='20000'/>  
+     </feSpecularLighting> 
+     <feComposite in='specOut' in2='SourceAlpha' operator='in' result='specOut'/> 
+     <feComposite in='SourceGraphic' in2='specOut' operator='arithmetic' k1='0' k2='1' k3='1' k4='0' result='litPaint'/>  
+     <feMerge> 
+         <feMergeNode in='offsetBlur'/> 
+         <feMergeNode in='litPaint'/> 
+     </feMerge> 
+  </filter> 
+  <radialGradient id='legendGradient' fx='5%' fy='5%' r='75%' spreadMethod='pad'>
+          <stop offset='0%' stop-color='#cfd7f6' stop-opacity='1'/> 
+          <stop offset='100%' stop-color='#919dd0' stop-opacity='1' /> 
+   </radialGradient>
+  <symbol id='calloutArrowDown' overflow='visible' >
+      <path d='M 0,0 L 7,11 L 15,0 z' style='fill:#f4f1a4; stroke:#aea913; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='calloutArrowUp' overflow='visible' >
+      <path d='M 0,15 L 7,3 L 15,15 z' style='fill:#f4f1a4; stroke:#aea913; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='pk' overflow='visible' >
+    <g transform='scale(0.99)'>
+     <path style='fill:#fbea8e;stroke:#763f17;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;'
+        d='M 9.3678877,3.5695485 C 9.1030218,3.2729386 9.0796382,2.7628519 9.3396185,2.4517097 9.5449651,2.1956495 9.9040386,2.0980533 10.199638,2.2169415 10.533525,2.3415459 10.775153,2.706942 10.750675,3.0842709 10.737029,3.3980003 10.541153,3.699122 10.258248,3.8066067 9.966649,3.9250429 9.6169668,3.8418805 9.4008073,3.6062324 9.3894892,3.5943518 9.3785264,3.582104 9.3678886,3.5695487 z M 11.226617,6.9916004 C 11.888137,6.3548946 12.293488,5.4172188 12.311087,4.442353 12.378144,2.7379364 11.248678,1.0541269 9.7322318,0.44767357 8.3887112,-0.1280313 6.7865012,0.26822889 5.8918395,1.4007929 5.080823,2.3839145 4.9336815,3.8452096 5.3635544,5.101615 L 4.3670905,5.315913 C 4.0664984,5.3682645 4.0967703,5.6316724 4.2574957,5.8208829 L 4.9124,6.5655244 4.1543436,7.2512357 3.2136002,7.2163506 3.1674775,8.5586827 2.0406832,8.5086512 1.5965306,8.9299953 1.5471661,10.179833 0.75616674,10.195223 0.2112857,10.758575 0.15354288,11.735988 0.07199052,12.765553 c 0.36440953,0.238225 0.79006967,0.195492 1.44938278,-0.02675 L 6.3033562,8.1282037 6.8217102,8.6765688 C 6.9985465,8.8799427 7.3003699,8.7497574 7.358381,8.5016252 L 7.4938877,7.5084164 c 0.8537488,0.3985387 1.8303125,0.4711541 2.6851793,0.1427713 0.393927,-0.1407258 0.746858,-0.3701772 1.04755,-0.6595873 z'/>
+     <path d='M 6.8014948,6.3102123 0.15369063,13.024481 0.21560535,12.141962 6.0062342,6.2683782 z'
+        style='fill:#ffe5a5;fill-opacity:1;stroke:#854e31;stroke-width:0.06912433;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:3.00300009'/>
+    </g>
+  </symbol>
+  <symbol id='unq' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#e07554;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+      <text x='5.5' y='7.7' style='font-size:8px;fill:#0460b5;'>1</text>
+    </g>
+  </symbol>
+  <symbol id='idx' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#e07554;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+    </g>
+  </symbol>
+  <symbol id='fk' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#b7d0f6;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+      d='M 12.48,0.33 7.07,0.89 9.067,2.974 0.329,11.731 1.073,12.597 9.811,3.841 11.77,5.78 z' />
+    </g>
+  </symbol>
+  <symbol id='ref' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#b7d0f6;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.10,12.70 5.31,12.15 3.40,10.06 11.82,1.32 11.11,0.45 2.68,9.19 0.80,7.24 z'/>
+    </g>
+  </symbol>
+  <symbol id='nn' overflow='visible' >
+  <path style='stroke:#9b3e50;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0,0 3,3 M 0,3 3,0 z'/>
+  </symbol>
+  <marker id='arrow' viewBox='0 0 7 7' refX='0' refY='3' markerUnits='strokeWidth' markerWidth='7' markerHeight='7' orient='auto'>
+    <path d='M 0,0 L 7, 3 L 0,7 z' style='fill:#797979; stroke-width:0px;' />
+  </marker>
+  <marker id='foot' viewBox='0 0 7 7' refX='7' refY='3' markerUnits='strokeWidth' markerWidth='7' markerHeight='7' orient='auto'>
+    <path d='M 0,3 L 15, 3 z' style='stroke:#797979;' />
+  </marker>
+</defs>
+
+<!-- ============= Desktop ============= -->
+<rect x='1' y='1' width='733' height='453' rx='7' ry='7' style='fill:white; stroke:#104576; stroke-width:0.5;' />
+
+<!-- ============= Legend ============= -->
+<g transform='translate(10,10)'>
+  <rect x='10' y='10' width='320' height='76' rx='6' ry='6' style='fill:url(#legendGradient);filter:url(#legendShadow);'/> 
+  <text x='20' y='30'><tspan>Project</tspan> Vertica - Production</text> 
+  <text x='20' y='44'><tspan>Layout</tspan> fhr-front-office</text> 
+  <text x='20' y='58'><tspan>Tip: Move the mouse over columns to read the comments</tspan></text> 
+  <text x='180' y='74'><tspan>Generated using <a xlink:href='http://www.dbschema.com'>DbSchema</a></tspan></text> 
+</g>
+
+<g transform='translate(0,110)'>
+<!-- ============= Table 'f_fhr_searches_daily' ============= -->
+<rect class='table' x='45' y='53' width='180' height='225' rx='7' ry='7' />
+<path d='M 45.50 79.50 L 45.50 60.50 Q 45.50 53.50 52.50 53.50 L 217.50 53.50 Q 224.50 53.50 224.50 60.50 L 224.50 79.50 L45.50 79.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#f_fhr_searches_daily'><text x='84' y='71' class='tableTitle'>f_fhr_searches_daily</text><title>Table public.f_fhr_searches_daily
+Searches performed in Mozilla products identified in the FHR submissions</title></a>
+  <use id='nn' x='47' y='87' xlink:href='#nn'/><a xlink:href='#search_date'><text x='63' y='97'>search_date</text><text x='187' y='97' class='colType'>Date</text><title>search_date date not null default &#039;1970&#045;01&#045;01&#039;&#058;&#058;date
+date of search</title></a>
+  <use id='nn' x='47' y='102' xlink:href='#nn'/><a xlink:href='#product'><text x='63' y='112'>product</text><text x='146' y='112' class='colType'>Varchar(255)</text><title>product varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Product used to perform search&#046; ex&#058; Firefox&#044; Fennec&#044; FirefoxOS</title></a>
+  <use id='nn' x='47' y='117' xlink:href='#nn'/><a xlink:href='#product_version'><text x='63' y='127'>product_version</text><text x='146' y='127' class='colType'>Varchar(255)</text><title>product_version varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+version of product used to perform search&#046; ex&#058; 21&#044; 22&#044; 23</title></a>
+  <use id='nn' x='47' y='132' xlink:href='#nn'/><a xlink:href='#channel'><text x='63' y='142'>channel</text><text x='146' y='142' class='colType'>Varchar(255)</text><title>channel varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+release channel of product&#046; ex&#058; release&#044; aurora&#044; nightly</title></a>
+  <use id='nn' x='47' y='147' xlink:href='#nn'/><a xlink:href='#locale'><text x='63' y='157'>locale</text><text x='146' y='157' class='colType'>Varchar(255)</text><title>locale varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+locale of installtion&#046; ex&#058; en&#045;US</title></a>
+  <use id='nn' x='47' y='162' xlink:href='#nn'/><a xlink:href='#country'><text x='63' y='172'>country</text><text x='146' y='172' class='colType'>Varchar(255)</text><title>country varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Country of installation&#046; ex&#058; United States of America&#044; Spain&#044; Poland</title></a>
+  <use id='nn' x='47' y='177' xlink:href='#nn'/><a xlink:href='#platform'><text x='63' y='187'>platform</text><text x='146' y='187' class='colType'>Varchar(255)</text><title>platform varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+platform of installation&#046; ex&#058; Windows&#044; Android&#044; iOS</title></a>
+  <use id='nn' x='47' y='192' xlink:href='#nn'/><a xlink:href='#platform_version'><text x='63' y='202'>platform_version</text><text x='146' y='202' class='colType'>Varchar(255)</text><title>platform_version varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+version of platform&#046; ex&#058; 7&#044; 8&#044; 95</title></a>
+  <use id='nn' x='47' y='207' xlink:href='#nn'/><a xlink:href='#partner'><text x='63' y='217'>partner</text><text x='146' y='217' class='colType'>Varchar(255)</text><title>partner varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Search partner&#046; ex&#058; Google&#044; Amazon&#044; Bing&#044; Lycos</title></a>
+  <use id='nn' x='47' y='222' xlink:href='#nn'/><a xlink:href='#search_location'><text x='63' y='232'>search_location</text><text x='146' y='232' class='colType'>Varchar(255)</text><title>search_location varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Component of product used to perform search&#046; ex&#058; searchbar&#044; urlbar</title></a>
+  <use id='nn' x='47' y='237' xlink:href='#nn'/><a xlink:href='#profile_count'><text x='63' y='247'>profile_count</text><text x='174' y='247' class='colType'>Integer</text><title>profile_count integer not null default 0
+count of profiles that peformed search&#046; ex&#058; 100&#044; 10&#044; 1000</title></a>
+  <use id='nn' x='47' y='252' xlink:href='#nn'/><a xlink:href='#search_count'><text x='63' y='262'>search_count</text><text x='174' y='262' class='colType'>Integer</text><title>search_count integer not null default 0
+count of searches&#046; ex&#058; 100&#044; 1000&#044; 10000</title></a>
+
+<!-- ============= Table 'f_fhr_profile_counts' ============= -->
+<rect class='table' x='270' y='53' width='180' height='180' rx='7' ry='7' />
+<path d='M 270.50 79.50 L 270.50 60.50 Q 270.50 53.50 277.50 53.50 L 442.50 53.50 Q 449.50 53.50 449.50 60.50 L 449.50 79.50 L270.50 79.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#f_fhr_profile_counts'><text x='310' y='71' class='tableTitle'>f_fhr_profile_counts</text><title>Table public.f_fhr_profile_counts
+Profile counts found in FHR submissions</title></a>
+  <use id='nn' x='272' y='87' xlink:href='#nn'/><a xlink:href='#submission_date'><text x='288' y='97'>submission_date</text><text x='412' y='97' class='colType'>Date</text><title>submission_date date not null default &#039;1970&#045;01&#045;01&#039;&#058;&#058;date
+Date profile was counted</title></a>
+  <use id='nn' x='272' y='102' xlink:href='#nn'/><a xlink:href='#product'><text x='288' y='112'>product</text><text x='371' y='112' class='colType'>Varchar(255)</text><title>product varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Product used by profile</title></a>
+  <use id='nn' x='272' y='117' xlink:href='#nn'/><a xlink:href='#product_version'><text x='288' y='127'>product_version</text><text x='371' y='127' class='colType'>Varchar(255)</text><title>product_version varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+version of product used by profile</title></a>
+  <use id='nn' x='272' y='132' xlink:href='#nn'/><a xlink:href='#channel'><text x='288' y='142'>channel</text><text x='371' y='142' class='colType'>Varchar(255)</text><title>channel varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+release channel of product</title></a>
+  <use id='nn' x='272' y='147' xlink:href='#nn'/><a xlink:href='#locale'><text x='288' y='157'>locale</text><text x='371' y='157' class='colType'>Varchar(255)</text><title>locale varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+locale of installation</title></a>
+  <use id='nn' x='272' y='162' xlink:href='#nn'/><a xlink:href='#country'><text x='288' y='172'>country</text><text x='371' y='172' class='colType'>Varchar(255)</text><title>country varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+country of installation</title></a>
+  <use id='nn' x='272' y='177' xlink:href='#nn'/><a xlink:href='#platform'><text x='288' y='187'>platform</text><text x='371' y='187' class='colType'>Varchar(255)</text><title>platform varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+platform of installation</title></a>
+  <use id='nn' x='272' y='192' xlink:href='#nn'/><a xlink:href='#platform_version'><text x='288' y='202'>platform_version</text><text x='371' y='202' class='colType'>Varchar(255)</text><title>platform_version varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+version of platform</title></a>
+  <use id='nn' x='272' y='207' xlink:href='#nn'/><a xlink:href='#profile_count'><text x='288' y='217'>profile_count</text><text x='399' y='217' class='colType'>Integer</text><title>profile_count integer not null default 0
+count of profiles</title></a>
+
+<!-- ============= Table 'f_fhr_profile_age' ============= -->
+<rect class='table' x='510' y='53' width='180' height='210' rx='7' ry='7' />
+<path d='M 510.50 79.50 L 510.50 60.50 Q 510.50 53.50 517.50 53.50 L 682.50 53.50 Q 689.50 53.50 689.50 60.50 L 689.50 79.50 L510.50 79.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#f_fhr_profile_age'><text x='557' y='71' class='tableTitle'>f_fhr_profile_age</text><title>Table public.f_fhr_profile_age</title></a>
+  <use id='nn' x='512' y='87' xlink:href='#nn'/><a xlink:href='#snapshot_date'><text x='528' y='97'>snapshot_date</text><text x='652' y='97' class='colType'>Date</text><title>snapshot_date date not null default &#039;1970&#045;01&#045;01&#039;&#058;&#058;date
+date of snapshot taken</title></a>
+  <use id='nn' x='512' y='102' xlink:href='#nn'/><a xlink:href='#profile_create_date'><text x='528' y='112'>profile_create_date</text><text x='652' y='112' class='colType'>Date</text><title>profile_create_date date not null default &#039;1970&#045;01&#045;01&#039;&#058;&#058;date
+Date profile was created</title></a>
+  <use id='nn' x='512' y='117' xlink:href='#nn'/><a xlink:href='#product'><text x='528' y='127'>product</text><text x='611' y='127' class='colType'>Varchar(255)</text><title>product varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+product of installation used by profile&#046; ex&#058; Firefox&#044; Fennec&#044; FirefoxOS</title></a>
+  <use id='nn' x='512' y='132' xlink:href='#nn'/><a xlink:href='#product_version'><text x='528' y='142'>product_version</text><text x='611' y='142' class='colType'>Varchar(255)</text><title>product_version varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Version of product used by installation&#046; ex&#058; 21&#044; 22&#044; 23</title></a>
+  <use id='nn' x='512' y='147' xlink:href='#nn'/><a xlink:href='#channel'><text x='528' y='157'>channel</text><text x='611' y='157' class='colType'>Varchar(255)</text><title>channel varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Release channel of installation&#046; ex&#058; Aurora&#044; Nightly&#044; Beta</title></a>
+  <use id='nn' x='512' y='162' xlink:href='#nn'/><a xlink:href='#locale'><text x='528' y='172'>locale</text><text x='611' y='172' class='colType'>Varchar(255)</text><title>locale varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Locale of installation&#046; ex&#058; en&#045;US</title></a>
+  <use id='nn' x='512' y='177' xlink:href='#nn'/><a xlink:href='#country'><text x='528' y='187'>country</text><text x='611' y='187' class='colType'>Varchar(255)</text><title>country varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Country of installation&#046; ex&#058; United States of America&#044; Spain&#044; Brazil</title></a>
+  <use id='nn' x='512' y='192' xlink:href='#nn'/><a xlink:href='#platform'><text x='528' y='202'>platform</text><text x='611' y='202' class='colType'>Varchar(255)</text><title>platform varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Platform of installation&#046; ex&#058; Windows&#044; iOS&#044; Android</title></a>
+  <use id='nn' x='512' y='207' xlink:href='#nn'/><a xlink:href='#platform_version'><text x='528' y='217'>platform_version</text><text x='611' y='217' class='colType'>Varchar(255)</text><title>platform_version varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Version of platform&#046; ex&#058; 7&#044; 8&#044; 4&#046;3</title></a>
+  <use id='nn' x='512' y='222' xlink:href='#nn'/><a xlink:href='#profile_age'><text x='528' y='232'>profile_age</text><text x='611' y='232' class='colType'>Varchar(255)</text><title>profile_age varchar&#040;255&#041; not null default &#039;&#035;unknown&#039;
+Age of profile</title></a>
+  <use id='nn' x='512' y='237' xlink:href='#nn'/><a xlink:href='#profile_counts'><text x='528' y='247'>profile_counts</text><text x='639' y='247' class='colType'>Integer</text><title>profile_counts integer not null default 0
+Count of profiles</title></a>
+
+</g></svg>
+
+<br/><br/>
+<table id='dbs' >
+<thead>
+<tr><th colspan='3'><a name='f_fhr_searches_daily'>f_fhr_searches_daily</a></th></tr>
+<tr><td colspan='3'>Searches performed in Mozilla products identified in the FHR submissions </td></tr>
+</thead>
+<tbody>
+	<tr>
+		<td><a name='search_date'>search&#095;date</a></td>
+		<td width='40%'> Date  NOT NULL  DEFO '1970-01-01'::date </td>
+		<td width='99%'> date of search </td>
+	</tr>
+	<tr>
+		<td><a name='product'>product</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Product used to perform search&#046; ex&#058; Firefox&#044; Fennec&#044; FirefoxOS </td>
+	</tr>
+	<tr>
+		<td><a name='product_version'>product&#095;version</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> version of product used to perform search&#046; ex&#058; 21&#044; 22&#044; 23 </td>
+	</tr>
+	<tr>
+		<td><a name='channel'>channel</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> release channel of product&#046; ex&#058; release&#044; aurora&#044; nightly </td>
+	</tr>
+	<tr>
+		<td><a name='locale'>locale</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> locale of installtion&#046; ex&#058; en&#045;US </td>
+	</tr>
+	<tr>
+		<td><a name='country'>country</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Country of installation&#046; ex&#058; United States of America&#044; Spain&#044; Poland </td>
+	</tr>
+	<tr>
+		<td><a name='platform'>platform</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> platform of installation&#046; ex&#058; Windows&#044; Android&#044; iOS </td>
+	</tr>
+	<tr>
+		<td><a name='platform_version'>platform&#095;version</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> version of platform&#046; ex&#058; 7&#044; 8&#044; 95 </td>
+	</tr>
+	<tr>
+		<td><a name='partner'>partner</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Search partner&#046; ex&#058; Google&#044; Amazon&#044; Bing&#044; Lycos </td>
+	</tr>
+	<tr>
+		<td><a name='search_location'>search&#095;location</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Component of product used to perform search&#046; ex&#058; searchbar&#044; urlbar </td>
+	</tr>
+	<tr>
+		<td><a name='profile_count'>profile&#095;count</a></td>
+		<td width='40%'> Integer  NOT NULL  DEFO 0 </td>
+		<td width='99%'> count of profiles that peformed search&#046; ex&#058; 100&#044; 10&#044; 1000 </td>
+	</tr>
+	<tr>
+		<td><a name='search_count'>search&#095;count</a></td>
+		<td width='40%'> Integer  NOT NULL  DEFO 0 </td>
+		<td width='99%'> count of searches&#046; ex&#058; 100&#044; 1000&#044; 10000 </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<table id='dbs' >
+<thead>
+<tr><th colspan='3'><a name='f_fhr_profile_counts'>f_fhr_profile_counts</a></th></tr>
+<tr><td colspan='3'>Profile counts found in FHR submissions </td></tr>
+</thead>
+<tbody>
+	<tr>
+		<td><a name='submission_date'>submission&#095;date</a></td>
+		<td width='40%'> Date  NOT NULL  DEFO '1970-01-01'::date </td>
+		<td width='99%'> Date profile was counted </td>
+	</tr>
+	<tr>
+		<td><a name='product'>product</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Product used by profile </td>
+	</tr>
+	<tr>
+		<td><a name='product_version'>product&#095;version</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> version of product used by profile </td>
+	</tr>
+	<tr>
+		<td><a name='channel'>channel</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> release channel of product </td>
+	</tr>
+	<tr>
+		<td><a name='locale'>locale</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> locale of installation </td>
+	</tr>
+	<tr>
+		<td><a name='country'>country</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> country of installation </td>
+	</tr>
+	<tr>
+		<td><a name='platform'>platform</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> platform of installation </td>
+	</tr>
+	<tr>
+		<td><a name='platform_version'>platform&#095;version</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> version of platform </td>
+	</tr>
+	<tr>
+		<td><a name='profile_count'>profile&#095;count</a></td>
+		<td width='40%'> Integer  NOT NULL  DEFO 0 </td>
+		<td width='99%'> count of profiles </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<table id='dbs' >
+<thead>
+<tr><th colspan='3'><a name='f_fhr_profile_age'>f_fhr_profile_age</a></th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td><a name='snapshot_date'>snapshot&#095;date</a></td>
+		<td width='40%'> Date  NOT NULL  DEFO '1970-01-01'::date </td>
+		<td width='99%'> date of snapshot taken </td>
+	</tr>
+	<tr>
+		<td><a name='profile_create_date'>profile&#095;create&#095;date</a></td>
+		<td width='40%'> Date  NOT NULL  DEFO '1970-01-01'::date </td>
+		<td width='99%'> Date profile was created </td>
+	</tr>
+	<tr>
+		<td><a name='product'>product</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> product of installation used by profile&#046; ex&#058; Firefox&#044; Fennec&#044; FirefoxOS </td>
+	</tr>
+	<tr>
+		<td><a name='product_version'>product&#095;version</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Version of product used by installation&#046; ex&#058; 21&#044; 22&#044; 23 </td>
+	</tr>
+	<tr>
+		<td><a name='channel'>channel</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Release channel of installation&#046; ex&#058; Aurora&#044; Nightly&#044; Beta </td>
+	</tr>
+	<tr>
+		<td><a name='locale'>locale</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Locale of installation&#046; ex&#058; en&#045;US </td>
+	</tr>
+	<tr>
+		<td><a name='country'>country</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Country of installation&#046; ex&#058; United States of America&#044; Spain&#044; Brazil </td>
+	</tr>
+	<tr>
+		<td><a name='platform'>platform</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Platform of installation&#046; ex&#058; Windows&#044; iOS&#044; Android </td>
+	</tr>
+	<tr>
+		<td><a name='platform_version'>platform&#095;version</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Version of platform&#046; ex&#058; 7&#044; 8&#044; 4&#046;3 </td>
+	</tr>
+	<tr>
+		<td><a name='profile_age'>profile&#095;age</a></td>
+		<td width='40%'> Varchar&#040; 255 &#041;  NOT NULL  DEFO '#unknown' </td>
+		<td width='99%'> Age of profile </td>
+	</tr>
+	<tr>
+		<td><a name='profile_counts'>profile&#095;counts</a></td>
+		<td width='40%'> Integer  NOT NULL  DEFO 0 </td>
+		<td width='99%'> Count of profiles </td>
+	</tr>
+</tbody>
+</table>
+
+</body></html>
